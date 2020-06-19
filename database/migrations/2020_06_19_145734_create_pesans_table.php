@@ -14,7 +14,7 @@ class CreatePesansTable extends Migration
     public function up()
     {
         Schema::create('pesans', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('nama_pelanggan');
             $table->string('phone');
             $table->string('alamat');
@@ -24,7 +24,7 @@ class CreatePesansTable extends Migration
 
 
             $table->softDeletes();
-            $table->timestamp();
+            $table->timestamps();
         });
     }
 
