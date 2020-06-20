@@ -14,13 +14,14 @@ class CreateProduksTable extends Migration
     public function up()
     {
         Schema::create('produks', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('kode')->unique()->nullable();
-            $table->string('nama')->unique();
-            $table->integer('harga');
-            $table->string('Gambar');
-            $table->softDeletes();
+            $table->bigIncrements('id_produk');
+            $table->string('kode');
+            $table->string('nama', 100);
+            $table->double('harga');  
+            $table->text('deskripsi');
+            $table->text('gambar');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
