@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Produk;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        
     }
 
     /**
@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $produks = Produk::paginate(20);
+        return view('home', compact('produks'));
     }
 }
