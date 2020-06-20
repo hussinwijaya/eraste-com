@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Barang;
-use App\Pesanan;
-use App\User;
-use App\PesananDetail;
+use App\Produk;
+use App\Pesan;
+use App\Pengguna;
+use App\PesanDetail;
 
 use Illuminate\Http\Request;
 
@@ -19,6 +19,11 @@ class PesanController extends Controller
     {
     	$produk = Produk::where('id', $id)->first();
 
-    	return view('pemesanansan.index', compact('produk'));
+    	return view('pemesanan.index', compact('produk'));
+    }
+    public function pesan(Request $request, $id)
+    {	
+    	$barang = Barang::where('id', $id)->first();
+    	$tanggal = Carbon::now();
     }
 }

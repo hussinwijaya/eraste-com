@@ -17,7 +17,7 @@
                     <strong>Keterangan :</strong> <br>
                     {{ $produk->keterangan }} 
                 </p>
-                <a href="{{ url('pesan') }}/{{ $produk->id }}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Pesan</a>
+                <a href="{{ url('pemesanan') }}/{{ $produk->id }}" class="btn btn-primary"> Pesan</a>
               </div>
             </div> 
         </div>
